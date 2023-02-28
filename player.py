@@ -18,43 +18,43 @@ class Player:
 
         match randomMove:
             case 0:
-                case0(self, mapX, mapY)
+                moveUp(self, mapX, mapY)
             case 1:
-                case1(self, mapX, mapY)
+                moveRight(self, mapX, mapY)
             case 2:
-                case2(self, mapX, mapY)
+                moveDown(self, mapX, mapY)
             case 3:
-                case3(self, mapX, mapY)
+                moveLeft(self, mapX, mapY)
 
         # move up if able to move up, else move right
 
-        def case0(self, mapX, mapY):
+        def moveUp(self, mapX, mapY):
             if (self.yCord+1 <= mapY):
                 self.yCord += 1
                 self.moveCount += 1
             else:
-                case1(self, mapX, mapY)
+                moveRight(self, mapX, mapY)
 
         # move right if able to move right, else move down
-        def case1(self, mapX, mapY):
+        def moveRight(self, mapX, mapY):
             if (self.xCord+1 <= mapX):
                 self.xCord += 1
                 self.moveCount += 1
             else:
-                case2(self, mapX, mapY)
+                moveDown(self, mapX, mapY)
 
         # move down if able to move down, else move left
-        def case2(self, mapX, mapY):
+        def moveDown(self, mapX, mapY):
             if (self.yCord-1 >= 0):
                 self.yCord -= 1
                 self.moveCount += 1
             else:
-                case3(self, mapX, mapY)
+                moveLeft(self, mapX, mapY)
 
         # move left if able to move left, else move up
-        def case3(self, mapX, mapY):
+        def moveLeft(self, mapX, mapY):
             if (self.xCord-1 >= 0):
                 self.xCord -= 1
                 self.moveCount += 1
             else:
-                case0(self, mapX, mapY)
+                moveUp(self, mapX, mapY)
